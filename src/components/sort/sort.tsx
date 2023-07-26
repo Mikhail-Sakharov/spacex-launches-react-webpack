@@ -2,16 +2,17 @@ import {ChangeEvent, useState} from 'react';
 import {SortOrder} from '../../types/query-args.interface';
 
 const DisplayedSortOrderMap = {
-  [SortOrder.Asc]: 'сначала самые ранние',
-  [SortOrder.Desc]: 'сначала самые свежие'
+  [SortOrder.Asc]: <span>&#8679;</span>,
+  [SortOrder.Desc]: <span>&#8681;</span>
 }
 
 interface SortProps {
+  sortTypeLabelText: string;
   setSortOrder: (state: SortOrder) => void;
 }
 
-function Sort({setSortOrder}: SortProps) {
-  const [sortOrderLabelText, setSortOrderLabelText] = useState('сначала самые свежие');
+function Sort({sortTypeLabelText, setSortOrder}: SortProps) {
+  const [sortOrderLabelText, setSortOrderLabelText] = useState(<span>&#8681;</span>);
   const handleSortOrderInputChange = (evt: ChangeEvent<HTMLInputElement>) => {
     const checked = evt.currentTarget.checked;
     if (checked) {
@@ -25,16 +26,15 @@ function Sort({setSortOrder}: SortProps) {
 
   return (
     <div>
-      <label htmlFor="sort">
+      <label style={{backgroundColor: 'lightgray'}} htmlFor="sort">
         <input
+          style={{display: 'none'}}
           onChange={handleSortOrderInputChange}
           type="checkbox" name="sort" id="sort"
         />
-        <span>
-          {
-            `${sortOrderLabelText}`
-          }
-        </span>
+        <span>{sortOrderLabelText}</span>
+        {' '}
+        <span>{sortTypeLabelText}</span>
       </label>
     </div>
   );

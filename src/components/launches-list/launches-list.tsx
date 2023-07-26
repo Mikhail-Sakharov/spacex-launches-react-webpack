@@ -45,7 +45,7 @@ function LaunchesList(): JSX.Element {
 
   return (
     <>
-      <Sort setSortOrder={setQuerySortOrder}/>
+      <Sort sortTypeLabelText={'сортировка по дате'} setSortOrder={setQuerySortOrder}/>
       <ul>
         {
           data.map((launch: Launch) => (
