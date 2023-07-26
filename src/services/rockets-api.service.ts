@@ -1,5 +1,5 @@
 import {createApi, fetchBaseQuery} from '@reduxjs/toolkit/query/react';
-import {BASE_URL} from '../const';
+import {ApiRoutes, BASE_URL} from '../const';
 import {Rocket} from '../types/rocket.interface';
 
 export const rocketsApi = createApi({
@@ -9,7 +9,7 @@ export const rocketsApi = createApi({
   }),
   endpoints: (builder) => ({
     getRocket: builder.query<Rocket, string>({
-      query: (id: string) => `/rockets/${id}`
+      query: (id: string) => `${ApiRoutes.Rockets}/${id}`
     })
   })
 });
