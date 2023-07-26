@@ -3,6 +3,7 @@ import {useGetFilteredLaunchesMutation} from '../../services/launches-api.servic
 import {Launch} from '../../types/launch.interface';
 import {SortOrder} from '../../types/query-args.interface';
 import {INITIAL_LIMIT_VALUE} from '../../const';
+import LaunchInfo from '../launch-info/launch-info';
 
 function LaunchesList(): JSX.Element {
   // фильтры
@@ -45,11 +46,7 @@ function LaunchesList(): JSX.Element {
     <ul>
       {
         data.map((launch: Launch) => (
-          <li key={launch.id}>
-            <h2>{launch.name}</h2>
-            <h5>{launch.date_utc}</h5>
-            <p>{launch.details}</p>
-          </li>
+          <LaunchInfo key={launch.id} launch={launch}/>
         ))
       }
     </ul>
