@@ -23,7 +23,8 @@ function LaunchesList(): JSX.Element {
         date_utc: {
           $gte: queryStartDate,
           $lte: queryEndDate
-        }
+        },
+        success: true
       },
       options: {
         sort: {

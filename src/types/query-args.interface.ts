@@ -12,7 +12,8 @@ export interface QueryArgs {
     date_utc?: {
       $gte?: string,
       $lte?: string
-    }
+    },
+    success?: boolean
   },
   options?: {
     sort?: {
