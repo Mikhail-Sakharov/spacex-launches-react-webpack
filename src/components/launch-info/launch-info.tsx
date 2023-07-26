@@ -1,3 +1,4 @@
+import {getDate} from '../../helpers';
 import {Launch} from '../../types/launch.interface';
 
 interface LaunchInfoProps {
@@ -8,7 +9,7 @@ function LaunchInfo({launch}: LaunchInfoProps): JSX.Element {
   return (
     <li>
       <h2>{launch.name}</h2>
-      <h5>{launch.date_utc}</h5>
+      <h5>{getDate(launch.date_utc)}</h5>
       <p>{launch.details}</p>
     </li>
   );
