@@ -9,7 +9,7 @@ export const launchesApi = createApi({
   }),
   endpoints: (builder) => ({
     getLaunches: builder.query({
-      query: () => 'launches'
+      query: () => '/launches'
     }),
     getFilteredLaunches: builder.mutation({
       query: (body: QueryArgs) => ({
