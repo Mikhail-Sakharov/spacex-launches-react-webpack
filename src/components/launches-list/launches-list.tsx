@@ -4,6 +4,7 @@ import {Launch} from '../../types/launch.interface';
 import {SortOrder} from '../../types/query-args.interface';
 import {INITIAL_LIMIT_VALUE} from '../../const';
 import LaunchInfo from '../launch-info/launch-info';
+import Sort from '../sort/sort';
 
 function LaunchesList(): JSX.Element {
   // фильтры
@@ -40,16 +41,19 @@ function LaunchesList(): JSX.Element {
 
   useEffect(() => {
     onComponentRenderFetchData();
-  }, [])
+  }, [querySortOrder])
 
   return (
-    <ul>
-      {
-        data.map((launch: Launch) => (
-          <LaunchInfo key={launch.id} launch={launch}/>
-        ))
-      }
-    </ul>
+    <>
+      <Sort setSortOrder={setQuerySortOrder}/>
+      <ul>
+        {
+          data.map((launch: Launch) => (
+            <LaunchInfo key={launch.id} launch={launch}/>
+          ))
+        }
+      </ul>
+    </>
   );
 }
 
