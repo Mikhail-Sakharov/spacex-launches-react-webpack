@@ -25,10 +25,9 @@ function Sort({sortTypeLabelText, setSortOrder}: SortProps) {
   };
 
   return (
-    <div>
-      <label style={{backgroundColor: 'lightgray'}} htmlFor="sort">
+    <div className='sort'>
+      <label htmlFor="sort">
         <input
-          style={{display: 'none'}}
           onChange={handleSortOrderInputChange}
           type="checkbox" name="sort" id="sort"
         />

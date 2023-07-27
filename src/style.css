@@ -5,3 +5,39 @@ h1 {
 h2 {
   color: gray;
 }
+
+.launches-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 10px;
+}
+
+.launches-list__item {
+  /* border: 1px solid gray; */
+  border-radius: 15px;
+  max-width: 60dvw;
+  padding: 10px;
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
+}
+
+.launches-list__item:hover {
+  transition: 0.3s;
+  box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.5);
+}
+
+.launches-list__item-description {
+  display: flex;
+}
+
+.launches-list__item-description p {
+  margin: 15px;
+}
+
+.sort label {
+  background-color: lightgray;
+}
+
+.sort input {
+  display: none;
+}

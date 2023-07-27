@@ -11,18 +11,18 @@ function LaunchInfo({launch}: LaunchInfoProps): JSX.Element {
 
   return (
     <li>
-      <div style={{border: '1px solid gray', padding: '5px'}}>
+      <div className='launches-list__item'>
         <div>
           <h2>{launch.name}</h2>
           <h5>{getDate(launch.date_utc)}</h5>
         </div>
-        <div style={{display: 'flex'}}>
+        <div className='launches-list__item-description'>
           {
             data && (
               <img src={data.flickr_images[0]} width={250}/>
             )
           }
-          <p style={{marginLeft: '15px'}}>{launch.details}</p>
+          <p>{launch.details}</p>
         </div>
       </div>
     </li>

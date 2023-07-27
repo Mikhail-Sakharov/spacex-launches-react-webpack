@@ -47,12 +47,7 @@ function LaunchesList(): JSX.Element {
   return (
     <>
       <Sort sortTypeLabelText={'сортировка по дате'} setSortOrder={setQuerySortOrder}/>
-      <ul style={{
-        listStyle: 'none',
-        display: 'grid',
-        gridTemplateColumns: '1fr 1fr',
-        gridGap: '5px'
-      }}>
+      <ul className='launches-list'>
         {
           data.map((launch: Launch) => (
             <LaunchInfo key={launch.id} launch={launch}/>
