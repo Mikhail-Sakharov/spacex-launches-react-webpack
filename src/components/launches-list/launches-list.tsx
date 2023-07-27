@@ -8,10 +8,10 @@ import Sort from '../sort/sort';
 
 function LaunchesList(): JSX.Element {
   // фильтры
-  const [queryStartDate, setQueryStartDate] = useState('2015-01-01T00:00:00.000Z');
-  const [queryEndDate, setQueryEndDate] = useState('2020-01-01T00:00:00.000Z');
+  const [queryStartDate, _setQueryStartDate] = useState('2015-01-01T00:00:00.000Z');
+  const [queryEndDate, _setQueryEndDate] = useState('2020-01-01T00:00:00.000Z');
   const [querySortOrder, setQuerySortOrder] = useState<SortOrder>(SortOrder.Desc);
-  const [queryLimit, setQueryLimit] = useState(INITIAL_LIMIT_VALUE);
+  const [queryLimit, _setQueryLimit] = useState(INITIAL_LIMIT_VALUE);
 
   // загрузка данных
   const [data, setData] = useState<Launch[]>([]);
